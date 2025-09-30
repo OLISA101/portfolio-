@@ -7,20 +7,33 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  
   <!-- Navbar / Hero Section -->
-  <header class="navbar">
-    <div class="container">
-      <div class="logo">Philip olisa</div>
-      <nav class="nav-links">
-        <a href="#" class="active">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#case-studies">Case Studies</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a href="#" class="btn btn-outline">Hire me</a>
+ <!-- Navbar / Hero Section -->
+<header class="navbar">
+  <div class="container">
+    <div class="logo">Philip Olisa</div>
+    
+    <!-- Nav Links -->
+    <nav class="nav-links" id="navLinks">
+      <a href="#" class="active">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="btn btn-outline mobile-btn">Hire me</a>
+    </nav>
+    
+    <!-- Desktop Hire Button -->
+    <a href="#" class="btn btn-outline desktop-btn">Hire me</a>
+    
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      ☰
     </div>
-  </header>
+  </div>
+</header>
+
 
   <section class="hero">
     <div class="container hero-content">
@@ -258,6 +271,17 @@
 <button id="theme-toggle">🌙</button>
 
 <script>
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  
+  // Change hamburger to "X"
+  hamburger.textContent = navLinks.classList.contains("active") ? "✖" : "☰";
+});
+
   const toggleBtn = document.getElementById("theme-toggle");
   const body = document.body;
 
