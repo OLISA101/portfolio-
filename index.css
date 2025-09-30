@@ -581,9 +581,51 @@
   color: #777;
 }
 
+/* Hamburger hidden by default */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Hide mobile button by default */
+.mobile-btn {
+  display: none;
+}
+
 
   /* Responsive */
   @media (max-width: 768px) {
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #e7e6e6;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      width: 220px;
+      padding: 15px;
+      border-radius: 5px;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .desktop-btn {
+      display: none;
+    }
+  
+    .mobile-btn {
+      display: block;
+      margin-top: 10px;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+    
     .hero .container {
       flex-direction: column;
       text-align: center;
